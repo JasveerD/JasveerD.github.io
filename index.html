@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jasveer Dhillon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="shell">
+
+    <nav>
+      <a href="#" class="nav-logo">Jasveer Dhillon</a>
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="resume.pdf" download>CV</a></li>
+        <li><a href="mailto:jasveerdhillon05@gmail.com">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <p class="hero-eyebrow">Systems · HPC · Compilers</p>
+      <h1>Undefined behaviour,<br><em>defined results.</em></h1>
+      <p class="hero-bio">
+        Third-year Computer Science student at York University with a strong background in physics.
+        I work primarily in C++ and spend most of my time thinking about algorithms, memory, and
+        systems-level problems. I'm drawn to the parts of computing where the underlying hardware
+        still matters. Currently doing computational materials research in the Pisana Lab.
+      </p>
+      <div class="hero-meta">
+        <div class="meta-item">
+          <span class="meta-label">Institution</span>
+          <span class="meta-value">York University</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">GitHub</span>
+          <span class="meta-value">
+            <a href="https://github.com/JasveerD" target="_blank" rel="noopener" class="meta-link">JasveerD</a>
+          </span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">LinkedIn</span>
+          <span class="meta-value">
+            <a href="https://www.linkedin.com/in/jasveerd/" target="_blank" rel="noopener" class="meta-link">jasveerd</a>
+          </span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">CV</span>
+          <span class="meta-value">
+            <a href="resume.pdf" download class="cv-link">resume.pdf</a>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <section id="projects">
+      <div class="section-header reveal">
+        <span class="section-num">01</span>
+        <span class="section-title">Projects</span>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project reveal">
+          <div>
+            <div class="project-head">
+              <div class="project-name">Options Pricing Library</div>
+              <span class="project-status">In progress</span>
+            </div>
+            <p class="project-metrics">Black-Scholes · Greeks · Binomial trees · Monte Carlo · IV solver</p>
+            <p class="project-desc">
+              A quantitative finance library in C++ covering European option pricing and risk.
+              Implements Black-Scholes closed forms, the full set of Greeks, Cox-Ross-Rubinstein
+              binomial trees, Monte Carlo pricing, and a Newton-Raphson implied volatility solver,
+              with all numerical methods written from scratch.
+            </p>
+            <div class="project-tags">
+              <span class="tag">C++</span>
+              <span class="tag">Quant Finance</span>
+              <span class="tag">Numerical Methods</span>
+              <span class="tag">Monte Carlo</span>
+            </div>
+          </div>
+        </div>
+
+        <a class="project reveal" href="https://github.com/JasveerD/neural-net" target="_blank" rel="noopener">
+          <div>
+            <div class="project-head">
+              <div class="project-name">Neural Network from Scratch</div>
+            </div>
+            <p class="project-metrics">97.91% MNIST · 842x matmul speedup</p>
+            <p class="project-desc">
+              A neural network library written from scratch in C++20 with no ML frameworks.
+              Backpropagation derived analytically, He initialization, SGD with momentum, and a
+              templated Rule of 5 matrix class. Matrix multiplication runs through cblas_sgemm on
+              Apple AMX, benchmarked at up to 842x over a naive triple loop, alongside a Metal GPU
+              compute bridge.
+            </p>
+            <div class="project-tags">
+              <span class="tag">C++20</span>
+              <span class="tag">BLAS</span>
+              <span class="tag">Metal</span>
+              <span class="tag">Performance</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="project reveal" href="https://github.com/JasveerD/code-reviewer" target="_blank" rel="noopener">
+          <div>
+            <div class="project-head">
+              <div class="project-name">code-reviewer</div>
+            </div>
+            <p class="project-metrics">Demoed live at Google Toronto HQ</p>
+            <p class="project-desc">
+              A multi-agent CLI code review tool built on Google ADK and Gemini 2.5 Flash.
+              Correctness, security, and performance agents run pyright, bandit, and ruff in
+              parallel over tree-sitter preprocessed code, and a coordinator merges their findings
+              into one prioritized report. Works on local files, directories, and public GitHub PRs.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Google ADK</span>
+              <span class="tag">Multi-Agent</span>
+              <span class="tag">Static Analysis</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="project reveal" href="https://github.com/JasveerD/Fishy" target="_blank" rel="noopener">
+          <div>
+            <div class="project-head">
+              <div class="project-name">Fishy, a BASIC to C Compiler</div>
+            </div>
+            <p class="project-metrics">Lexer, parser, and emitter, all written by hand</p>
+            <p class="project-desc">
+              A source-to-source compiler from a BASIC dialect to ANSI C. Hand-written lexer,
+              recursive descent parser with a layered grammar for operator precedence, and an
+              emitter that hoists declarations to satisfy ANSI C rules. Validates GOTO targets
+              post-parse to catch forward references. No parser generator anywhere.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Compilers</span>
+              <span class="tag">Parsing</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="project reveal" href="https://github.com/JasveerD/GravitySim" target="_blank" rel="noopener">
+          <div>
+            <div class="project-head">
+              <div class="project-name">Gravity Simulator</div>
+            </div>
+            <p class="project-metrics">Real-time N-body · Momentum-conserving merges</p>
+            <p class="project-desc">
+              A real-time N-body gravity simulation in C++ with Raylib. Newtonian dynamics
+              integrated per frame across all particle pairs, momentum-conserving merges on
+              collision, and mouse-driven particle spawning with drag-controlled launch velocity.
+            </p>
+            <div class="project-tags">
+              <span class="tag">C++</span>
+              <span class="tag">Numerical Methods</span>
+              <span class="tag">Simulation</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="section-header reveal">
+        <span class="section-num">02</span>
+        <span class="section-title">Research</span>
+      </div>
+
+      <div class="research-block reveal">
+        <h3>Computational Screening of Materials for Anisotropic Lattice Thermal Transport</h3>
+        <p class="role">NSERC USRA + LURA · Pisana Lab, York University · May 2026 – Present</p>
+        <p>
+          Building a DFT-based screening pipeline to identify candidate crystals with strongly
+          anisotropic lattice thermal conductivity. Running first-principles calculations with
+          Quantum ESPRESSO on the SciNet Trillium HPC cluster, and conducting a systematic
+          literature review of low-symmetry materials to assess synthesis, stability, and
+          suitability for phonon transport calculations.
+        </p>
+        <div class="project-tags">
+          <span class="tag">DFT</span>
+          <span class="tag">Quantum ESPRESSO</span>
+          <span class="tag">HPC</span>
+          <span class="tag">SLURM</span>
+        </div>
+      </div>
+
+      <div class="research-block reveal">
+        <h3>Graphene as a Material for Tritium and Deuterium Separation in Water</h3>
+        <p class="role">NSERC USRA · Pisana Lab, York University · May 2025 – Aug. 2025</p>
+        <p>
+          Investigated graphene oxide membranes as a medium for isotopic water separation.
+          Fabricated GO filters, prepared samples for structural characterization, and operated a
+          Raman spectroscope to estimate the degree of oxidation in GO membranes. Processed raw
+          spectroscopy data in Python with SciPy for curve fitting and peak analysis, and presented
+          findings at a summer research conference.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">SciPy</span>
+          <span class="tag">Raman Spectroscopy</span>
+          <span class="tag">Materials Science</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards">
+      <div class="section-header reveal">
+        <span class="section-num">03</span>
+        <span class="section-title">Awards</span>
+      </div>
+
+      <div class="awards-list">
+
+        <div class="award-item reveal">
+          <div class="award-name">NSERC Undergraduate Student Research Award (USRA)</div>
+          <p class="award-desc">
+            Competitive national research award from the Natural Sciences and Engineering Research
+            Council of Canada, granted to support undergraduate research in science and engineering.
+          </p>
+        </div>
+
+        <div class="award-item reveal">
+          <div class="award-name">Lassonde Undergraduate Research Award (LURA)</div>
+          <p class="award-desc">
+            Competitive faculty-level research award from the Lassonde School of Engineering,
+            supporting undergraduate research placements.
+          </p>
+        </div>
+
+        <div class="award-item reveal">
+          <div class="award-name">Denise Hobbins Prize</div>
+          <p class="award-desc">
+            Awarded for the highest average in first-year physics courses at York University.
+          </p>
+        </div>
+
+        <div class="award-item reveal">
+          <div class="award-name">Dean's Honour Roll</div>
+          <p class="award-desc">
+            Recognized for academic excellence across the academic year at York University's
+            Lassonde School of Engineering.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      <ul class="footer-links">
+        <li><a href="https://github.com/JasveerD" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/jasveerd/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="mailto:jasveerdhillon05@gmail.com">Email</a></li>
+        <li><a href="resume.pdf" download>CV</a></li>
+      </ul>
+      <span class="footer-copy">Jasveer Dhillon, Toronto</span>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
